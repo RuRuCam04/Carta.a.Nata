@@ -1,0 +1,354 @@
+/* =====================================================================
+   ESTILOS DE LA CARTA  —  normalmente NO necesitas tocar este archivo.
+   Si quieres cambiar colores, edita las variables de :root de abajo.
+   ===================================================================== */
+
+:root {
+  --rosa:        #ff5d8f;
+  --rosa-fuerte: #ff3d77;
+  --rosa-suave:  #ffd6e6;
+  --lavanda:     #b794f6;
+  --crema:       #fff6fb;
+  --texto:       #5a3047;
+  --texto-suave: #8a647a;
+  --blanco:      #ffffff;
+  --sombra:      0 18px 45px rgba(255, 93, 143, 0.20);
+  --radio:       26px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Quicksand', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--texto);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe3f1 0%, #f5e8ff 45%, #fff1f7 100%);
+  background-attachment: fixed;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ---------- Tipografías especiales ---------- */
+.titulo-script {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  color: var(--rosa-fuerte);
+  line-height: 1.05;
+  text-shadow: 0 4px 14px rgba(255, 61, 119, 0.18);
+}
+
+/* ---------- Pantallas ---------- */
+.pantalla {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(16px, 4vw, 40px);
+}
+#acceso { justify-content: center; }
+.oculto { display: none !important; }
+
+/* ---------- Tarjetas ---------- */
+.tarjeta {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: clamp(26px, 5vw, 44px);
+  width: 100%;
+  max-width: 540px;
+  text-align: center;
+  animation: aparecer 0.7s ease both;
+}
+
+.tarjeta-acceso .subtitulo {
+  color: var(--texto-suave);
+  margin: 10px 0 26px;
+  font-size: 1.05rem;
+}
+
+/* ---------- Formulario de acceso ---------- */
+.form-acceso { text-align: left; }
+
+.campo { margin-bottom: 18px; }
+.campo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 7px;
+  font-size: 0.98rem;
+}
+.campo input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--rosa-suave);
+  border-radius: 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--texto);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.campo input:focus {
+  outline: none;
+  border-color: var(--rosa);
+  box-shadow: 0 0 0 4px rgba(255, 93, 143, 0.16);
+}
+.pista {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.86rem;
+  color: var(--lavanda);
+  font-style: italic;
+}
+
+.mensaje-error {
+  color: var(--rosa-fuerte);
+  font-weight: 600;
+  min-height: 1.4em;
+  margin: 4px 0 14px;
+  text-align: center;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 22px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--rosa) 0%, var(--lavanda) 100%);
+  color: var(--blanco);
+  font-size: 1.08rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(255, 93, 143, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s;
+}
+.boton:hover { transform: translateY(-2px); filter: brightness(1.04); }
+.boton:active { transform: translateY(0) scale(0.99); }
+
+.enlace-suave {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  color: var(--texto-suave);
+  font-family: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.enlace-suave:hover { color: var(--rosa); }
+
+/* ---------- Cabecera de la carta ---------- */
+.cabecera {
+  text-align: center;
+  margin-bottom: 26px;
+  animation: aparecer 0.8s ease both;
+}
+.bienvenida-texto {
+  color: var(--texto-suave);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.contador {
+  margin-top: 10px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--rosa-fuerte);
+  box-shadow: var(--sombra);
+}
+.boton-musica {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 9px 18px;
+  border: 2px solid var(--rosa-suave);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--rosa-fuerte);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.boton-musica:hover { transform: translateY(-2px); }
+
+/* ---------- Menú de secciones ---------- */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 760px;
+  margin: 0 auto 24px;
+}
+.chip {
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--texto);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(255, 93, 143, 0.12);
+  transition: transform 0.15s, background 0.2s, color 0.2s, border-color 0.2s;
+}
+.chip:hover { transform: translateY(-2px); }
+.chip.activo {
+  background: linear-gradient(135deg, var(--rosa) 0%, var(--lavanda) 100%);
+  color: var(--blanco);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- Contenido de cada sección ---------- */
+.contenido {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  flex: 1;
+}
+.seccion {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: clamp(26px, 5vw, 40px);
+  animation: aparecer 0.5s ease both;
+}
+.seccion h2 {
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  color: var(--rosa-fuerte);
+}
+.seccion h2 .icono { margin-right: 8px; }
+.seccion p { margin-bottom: 14px; font-size: 1.06rem; }
+.seccion p:last-child { margin-bottom: 0; }
+
+.lista-bonita { list-style: none; }
+.lista-bonita li {
+  position: relative;
+  padding: 10px 0 10px 34px;
+  font-size: 1.06rem;
+  border-bottom: 1px dashed var(--rosa-suave);
+  animation: deslizar 0.5s ease both;
+}
+.lista-bonita li:last-child { border-bottom: none; }
+.lista-bonita li::before {
+  content: "💗";
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+
+/* ---------- Sección secreta ---------- */
+.secreto-form { text-align: center; }
+.secreto-form input {
+  width: 100%;
+  max-width: 320px;
+  padding: 13px 16px;
+  border: 2px solid var(--lavanda);
+  border-radius: 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  text-align: center;
+  margin: 6px auto 16px;
+  display: block;
+}
+.secreto-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(183, 148, 246, 0.25);
+}
+.candado { font-size: 2.6rem; display: block; margin-bottom: 8px; }
+
+/* ---------- Sección final con corazón ---------- */
+.final-centro { text-align: center; }
+.corazon-grande {
+  font-size: 4.4rem;
+  display: inline-block;
+  margin: 10px 0 6px;
+  animation: latido 1.3s ease-in-out infinite;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+/* ---------- Corazones flotantes de fondo ---------- */
+#fondoCorazones {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.corazon-flotante {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: subir linear forwards;
+}
+
+/* ---------- Animaciones ---------- */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes deslizar {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  25%      { transform: scale(1.18); }
+  40%      { transform: scale(0.98); }
+}
+@keyframes subir {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.9; }
+  90%  { opacity: 0.9; }
+  100% { transform: translateY(-115vh) rotate(40deg); opacity: 0; }
+}
+@keyframes temblar {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-9px); }
+  40%, 80% { transform: translateX(9px); }
+}
+.temblar { animation: temblar 0.4s ease; }
+
+/* ---------- Respeto a quien prefiere menos movimiento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  .corazon-grande { animation: none; }
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 480px) {
+  .chip { padding: 9px 14px; font-size: 0.9rem; }
+  .seccion p, .lista-bonita li { font-size: 1rem; }
+}

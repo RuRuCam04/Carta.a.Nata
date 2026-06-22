@@ -1,0 +1,9 @@
+# Binarios compilados de la versión C++
+carta
+carta.exe
+*.o
+*.out
+
+# Dependencias / temporales
+node_modules/
+package-lock.json

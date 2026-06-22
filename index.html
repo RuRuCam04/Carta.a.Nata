@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff5d8f" />
+  <title>Carta para Nata 💌</title>
+  <meta name="description" content="Una carta hecha con código, con amor." />
+
+  <!-- Tipografías bonitas (si no hay internet, usa las del sistema) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <!-- Corazones flotantes de fondo (los crea el JavaScript) -->
+  <div id="fondoCorazones" aria-hidden="true"></div>
+
+  <!-- ============ PANTALLA DE ACCESO ============ -->
+  <main id="acceso" class="pantalla">
+    <section class="tarjeta tarjeta-acceso">
+      <h1 class="titulo-script" id="accesoTitulo">Carta para Nata</h1>
+      <p class="subtitulo" id="accesoSubtitulo"></p>
+      <form id="formAcceso" class="form-acceso" novalidate>
+        <div id="preguntas"></div>
+        <p class="mensaje-error" id="accesoError" role="alert"></p>
+        <button type="submit" class="boton" id="accesoBoton">Abrir mi carta 💗</button>
+        <button type="button" class="enlace-suave" id="verPistas">ver pistas 💡</button>
+        <button type="button" class="enlace-suave" id="modoInvitada"></button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ============ LA CARTA (oculta hasta desbloquear) ============ -->
+  <main id="carta" class="pantalla oculto">
+    <header class="cabecera">
+      <p class="bienvenida-texto" id="bienvenida"></p>
+      <h1 class="titulo-script" id="cartaTitulo">Para Nata</h1>
+      <p class="contador oculto" id="contador"></p>
+      <div>
+        <button id="botonMusica" class="boton-musica oculto" type="button">🎵 nuestra canción</button>
+      </div>
+      <audio id="audio" loop></audio>
+    </header>
+
+    <nav class="menu" id="menu" aria-label="Secciones de la carta"></nav>
+    <section class="contenido" id="contenido"></section>
+
+    <footer class="pie" id="pie"></footer>
+  </main>
+
+  <!-- Primero el contenido editable, luego la lógica -->
+  <script src="contenido.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
