@@ -14,8 +14,8 @@ const CONTENIDO = {
   /* ------------------------------------------------------------------ */
   /* 1) DATOS BÁSICOS                                                    */
   /* ------------------------------------------------------------------ */
-  paraQuien: "Nata",
-  deParte: "Ruru",
+  paraQuien: "❤️NataNatilla❤️",
+  deParte: "RuRu🗿",
 
   /* ------------------------------------------------------------------ */
   /* 2) PANTALLA DE ACCESO (las 3 preguntas para abrir la carta)        */
@@ -23,19 +23,19 @@ const CONTENIDO = {
   /*    ni acentos ni espacios de más: todo se compara en minúsculas.    */
   /* ------------------------------------------------------------------ */
   acceso: {
-    titulo: "Carta para Nata",
-    subtitulo: "Responde 3 preguntitas para abrir tu carta 💌",
+    titulo: "Carta para la mera Natilla💜",
+    subtitulo: "Ahora si viene lo chido 🗿:Responde 3 preguntas para abrir el tesoro 🪎 💌",
     preguntas: [
       {
         etiqueta: "1) ¿Cuál es tu nombre?",
-        placeholder: "Escribe tu nombre...",
-        respuesta: "nata",
-        pista: "Empieza con N y yo la digo todo el día 😏"
+        placeholder: "¿Mi marca favorita de tecnología?🍎",
+        respuesta: "aifon",
+        pista: "Empieza con a y termina en fon"
       },
       {
-        etiqueta: "2) ¿Qué día del mes es 'nuestro día'?",
+        etiqueta: "2) ¿Qué día del mes es 'nuestro día'?🗿",
         placeholder: "Solo el número...",
-        respuesta: "28",
+        respuesta: "29",
         pista: "Está entre el 27 y el 29 👀"
       },
       {
